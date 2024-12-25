@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/* Скидання стандартних стилів */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Видалення маркерів у списках */
+li {
+  list-style-type: none;
+}
+
+/* Заголовок */
+.header {
+  background-color: #f2f1eb;
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #6B4C3B;
+}
+
+/* Логотип */
+.site-logo {
+  font-size: 25px;
+  color: #5D4037;
+}
+.site-logo h1 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* Основний контейнер */
+.main {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Секція інсайтів */
+.ins {
+  width: 75%;
+}
+
+.ins-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Зображення */
+.product-image--more {
+  width: 40%;
+  display: flex;
+  gap: 0;
+  float: left;
+}
+.product-image--more img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.product-image {
+  width: 40%;
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Контент статті */
+.product-content {
+  width: 55%;
+  padding: 0 25px;
+  float: right;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Назва статті */
+.product-title {
+  font-size: 26px;
+  color: #6B4C3B;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-description {
+  line-height: 1.6;
+  color: #3E2723;
+  font-size: 18px;
+  font-family: "Georgia", serif;
+}
+
+.product-author {
+  font-style: italic;
+  font-size: 16px;
+  color: #6B4C3B;
+}
+
+/* Ліва бокова панель */
+.sidebar {
+  background-color: #f8f7f2;
+  padding: 20px;
+  width: 22%;
+  border-left: 1px solid #6B4C3B;
+  margin-top: -20px;
+  padding-top: 35px;
+}
+
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-title {
+  color: #6B4C3B;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.left-description {
+  line-height: 1.5;
+  color: #5D4037;
+  font-family: "Georgia", serif;
+  font-size: 15px;
+}
+
+/* Мобільна адаптація */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .ins,
+  .sidebar {
+    width: 100%;
+    border-left: none;
+    margin-top: 20px;
+  }
+  .product-image,
+  .product-image--more {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .product-content {
+    float: none;
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

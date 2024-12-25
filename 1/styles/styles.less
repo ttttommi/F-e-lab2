@@ -1,0 +1,228 @@
+// Змінні
+@primary-color: #6E3811;
+@secondary-color: #864222;
+@background-color: #FAF9F6;
+@font-color: #333;
+@font-family: Arial, sans-serif;
+@sidebar-width: 200px;
+
+// Загальні налаштування
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: @background-color;
+    line-height: 1.6;
+    color: @font-color;
+    font-family: @font-family;
+}
+
+// Шапка
+.header {
+    background-color: @primary-color;
+    padding: 10px 20px;
+    color: #fff;
+
+    .header-logo h1 {
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .header-table {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .header-search {
+        text-align: right;
+
+        input {
+            border: none;
+            margin-right: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            color: @font-color;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            background: @primary-color;
+        }
+    }
+}
+
+// Навігаційне меню
+.main-navigation {
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    background-color: @secondary-color;
+    padding: 10px 0;
+
+    a {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #9e7759;
+        }
+    }
+}
+
+// Основний контент
+.content-wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+// Лівий боковий стовпець
+.left-sidebar {
+    background-color: #fff;
+    height: calc(100vh - 180px);
+    position: fixed;
+    left: 10px;
+    top: 120px;
+    padding: 20px;
+    width: @sidebar-width;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: @primary-color;
+    }
+}
+
+// Правий боковий стовпець
+.right-sidebar {
+    background-color: #fff;
+    height: calc(100vh - 180px);
+    position: fixed;
+    right: 10px;
+    top: 120px;
+    padding: 20px;
+    width: @sidebar-width;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin-bottom: 15px;
+    }
+
+    a {
+        color: @primary-color;
+        text-decoration: none;
+    }
+}
+
+// Список статей
+.article-list {
+    margin: 0 @sidebar-width;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    article {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+
+        h2 {
+            color: @primary-color;
+            margin-bottom: 10px;
+        }
+
+        img {
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+}
+
+// Футер
+.footer {
+    margin-top: 20px;
+    background-color: @secondary-color;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+}
+
+// Адаптивність
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .main-navigation {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        position: static;
+        width: auto;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .right-sidebar {
+        margin-top: 20px; 
+    }
+
+    .article-list {
+        margin: 0;
+    }
+
+    .header-search input {
+        width: 60%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-wrapper {
+        max-width: 1600px; 
+    }
+
+    .left-sidebar, .right-sidebar {
+        width: 300px; 
+    }
+
+    .article-list {
+        margin: 0 300px; 
+    }
+}

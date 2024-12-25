@@ -1,0 +1,188 @@
+/* Скидання стандартних стилів */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Видалення маркерів у списках */
+  li {
+    list-style-type: none;
+  }
+  
+  /* Заголовок */
+  $header-bg-color: #f2f1eb;
+  $header-border-color: #6B4C3B;
+  $header-font-color: #5D4037;
+  
+  .header {
+    background-color: $header-bg-color;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid $header-border-color;
+  }
+  
+  /* Логотип */
+  .site-logo {
+    font-size: 25px;
+    color: $header-font-color;
+    
+    h1 {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+  }
+  
+  /* Основний контейнер */
+  .main {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Секція інсайтів */
+  .ins {
+    width: 75%;
+  }
+  
+  .ins-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Зображення */
+  $product-image-size: 40%;
+  $product-image-radius: 10px;
+  
+  .product-image--more {
+    width: $product-image-size;
+    display: flex;
+    gap: 0;
+    float: left;
+    
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: $product-image-radius;
+      width: 50%;
+    }
+  }
+  
+  .product-image {
+    width: $product-image-size;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $product-image-radius;
+    }
+  }
+  
+  /* Контент статті */
+  $product-content-padding: 25px;
+  $product-content-gap: 5px;
+  
+  .product-content {
+    width: 55%;
+    padding: 0 $product-content-padding;
+    float: right;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: $product-content-gap;
+  }
+  
+  /* Назва статті */
+  $product-title-color: #6B4C3B;
+  $product-description-color: #3E2723;
+  $product-author-color: #6B4C3B;
+  
+  .product-title {
+    font-size: 26px;
+    color: $product-title-color;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .product-description {
+    line-height: 1.6;
+    color: $product-description-color;
+    font-size: 18px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .product-author {
+    font-style: italic;
+    font-size: 16px;
+    color: $product-author-color;
+  }
+  
+  /* Ліва бокова панель */
+  $sidebar-bg-color: #f8f7f2;
+  $sidebar-border-color: #6B4C3B;
+  $left-title-color: #6B4C3B;
+  $left-description-color: #5D4037;
+  
+  .sidebar {
+    background-color: $sidebar-bg-color;
+    padding: 20px;
+    width: 22%;
+    border-left: 1px solid $sidebar-border-color;
+    margin-top: -20px;
+    padding-top: 35px;
+  }
+  
+  .left-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .left-title {
+    color: $left-title-color;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .left-description {
+    line-height: 1.5;
+    color: $left-description-color;
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+  }
+  
+  /* Мобільна адаптація */
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+    }
+  
+    .ins,
+    .sidebar {
+      width: 100%;
+      border-left: none;
+      margin-top: 20px;
+    }
+  
+    .product-image,
+    .product-image--more {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .product-content {
+      float: none;
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+  
